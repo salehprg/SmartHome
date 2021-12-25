@@ -1,0 +1,131 @@
+.sp-range-card {
+  margin-top: 1rem;
+  background-color: var(--surface-d);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  width: 0.25rem;
+  height: 3rem;
+  background-color: var(--surface-0);
+  border-radius: 1000px;
+}
+
+.divider-mega {
+  background-color: var(--surface-d);
+}
+
+.sp-dropdown {
+  font-size: 1.2rem;
+  padding: 0.5rem 3rem;
+  background-color: var(--surface-0);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.all-sp-dropdown{
+  background-color: var(--surface-d);
+  color: var(--text-color);
+}
+
+.sh-drop {
+  background-color: var(--surface-d);
+}
+
+.drop-item {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.sp-range-picker {
+  background-color: var(--surface-0);
+  font-size: 1.2rem;
+  padding: 0.5rem 3rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--text-color);
+}
+
+.sp-text{
+  color: var(--text-color);
+}
+
+.sp-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 1rem;
+}
+
+.sp-detail-card {
+  width: 100%;
+  background-color: var(--surface-d);
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 1rem;
+}
+
+.sp-detail-card span {
+  display: block;
+}
+
+.sp-detail-title {
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+}
+
+.sp-detail-text {
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+@include media-breakpoint-down(md) {
+  .sp-range-card div {
+    margin: 0 0.25rem 1rem 0.25rem;
+  }
+
+  .sp-detail-card {
+    padding: 1.5rem 3rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .sp-details {
+    flex-direction: column;
+  }
+
+  .sp-detail-card {
+    margin-bottom: 1rem;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+.date-picker-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-box {
+  text-align: center;
+  margin: 0 0.25rem;
+}
+
+.datepicker-outer-container {
+  font-size: 1.5rem !important;
+}

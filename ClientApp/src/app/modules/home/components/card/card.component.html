@@ -1,0 +1,13 @@
+<div [ngClass]="{'gcard': true, 'gcard-height-full': heightFull}" [class]="class">
+  <div class="head">
+    <div class="gcard-header">
+      <span [ngClass]="getIcon()"></span>
+      <span class="gcard-title" [class]="headerClass">{{ title }}</span>
+    </div>
+
+    <div *ngIf="isScenarioSetting">
+      <sh-checkbox [checked]="scenarioSettings.curtainsCheck[id]" (onChange)="setActive($event)"></sh-checkbox>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

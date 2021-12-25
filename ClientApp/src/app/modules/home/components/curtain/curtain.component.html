@@ -1,0 +1,14 @@
+<sh-card
+(onChange)="setActive($event)"
+(touchstart)="doNothing()"
+[title]="curtain.name"
+[icon]="'archway'"
+[isScenarioSetting]="isScenarioSetting"
+[id]="curtain.id"
+[iconFill]="true">
+  <sh-slider #slider (onChange)="set()" [(value)]="curtain.range"></sh-slider>
+</sh-card>
+
+<ng-template #notif>
+  <p>{{'GENERAL.NOTIFICATION_TEXT' | translate}}</p>
+</ng-template>

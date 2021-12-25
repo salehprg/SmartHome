@@ -1,0 +1,42 @@
+<div class="lookup" *ngIf="homeService._selectedRoom$ | async as room; else noSelection">
+
+    <div *ngIf="!isEmpty(room.devices); else noModules">
+      <ng-container [ngTemplateOutlet]="gadgetTemplate"
+        [ngTemplateOutletContext]="{ modules: room.devices }"></ng-container>
+    </div>
+  </div>
+
+  <ng-template #gadgetTemplate let-modules="modules">
+      <div class="row">
+          <div class="col-md-6">
+              <sh-checkbox text="{{'SCENARIO.ACTIVE_STATE' | translate}}" [disabled]="true" [checked]="true"></sh-checkbox>
+          </div>
+          <div class="col-md-6">
+              <sh-checkbox text="{{'SCENARIO.STAY_SAME' | translate}}" [disabled]="true" [checked]="false"></sh-checkbox>
+          </div>
+      </div>
+    <div class="gadgets-container mx-auto row">
+      <sh-lamp *ngFor="let lamp of modules.leDs" class="col-4 p-1" [lamp]="lamp" [isScenarioSetting]="true"></sh-lamp>
+      <!-- <sh-lamps class="col-md-12" [isScenarioSetting]="true" *ngIf="modules.leDs && modules.leDs.length > 0" [lamps]="modules.leDs"></sh-lamps> -->
+
+      <div class="other-gadgets col-md-12">
+        <ng-container *ngFor="let curtain of modules.curtains">
+          <sh-curtain [isScenarioSetting]="true" [curtain]="curtain"></sh-curtain>
+        </ng-container>
+      </div>
+    </div>
+  </ng-template>
+
+
+
+  <ng-template #noSelection>
+    <div *ngIf="!(homeService._isLoading$ | async)" class="error-home">
+      <p class="lookup-text">{{'HOME.LOOKUP.SELECT_ROOM' | translate}}</p>
+    </div>
+  </ng-template>
+
+  <ng-template #noModules>
+    <div class="error-home">
+      <p class="lookup-text">{{'HOME.LOOKUP.NO_MODULE' | translate}}</p>
+    </div>
+  </ng-template>

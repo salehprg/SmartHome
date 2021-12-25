@@ -1,0 +1,18 @@
+<div ngbDropdown [placement]="placement">
+  <img
+    ngbDropdownToggle
+    data-toggle="dropdown"
+    data-offset="10px,0px"
+    class="flag-icon"
+    src="{{ language?.flag }}"
+    alt="language"
+  />
+  <div class="drop-box" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <ng-container *ngFor="let language of languages">
+      <div (click)="setLanguageWithRefresh(language.lang)" class="lang-holder">
+        <img class="language-flag" src="{{ language?.flag }}" alt="language.lang">
+        <span [ngClass]="{'falang': language.lang === 'fa'}">{{ language.name }}</span>
+      </div>
+    </ng-container>
+  </div>
+</div>

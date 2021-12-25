@@ -1,0 +1,19 @@
+<div *ngIf="homeService._home$ | async;" class="home-container row">
+  <div class="lookup-options" *ngIf="!!(homeService._selectedRoom$ | async)">
+    <span
+    *ngFor="let look of lookups"
+    [ngClass]="{'lookup-item': true, 'lookup-item-active': active === look}"
+    (click)="active = look"
+    >{{ look }}</span>
+  </div>
+    <sh-map class="map-item col-lg-6 col-md-12"></sh-map>
+    <sh-home-lockup [active]="active" class="col-lg-6 col-md-12"></sh-home-lockup>
+  </div>
+
+  <div *ngIf="homeService._isLoading$ | async" class="error-home">
+    <p>{{'GENERAL.LOADING' | translate}}</p>
+  </div>
+
+  <div *ngIf="!(homeService._home$ | async) && !(homeService._isLoading$ | async)" class="error-home">
+    <p>{{'HOME.ERROR' | translate}}</p>
+  </div>

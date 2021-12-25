@@ -1,0 +1,18 @@
+@import "mixin";
+
+@include datePickerTheme(
+  'theme-default',
+  var(--surface-0),
+  var(--text-color),
+  #007BE6,
+  #FFFFFF,
+  var(--primary-color),
+  #FFFFFF,
+  var(--surface-0),
+  var(--surface-f),
+  var(--surface-d),
+  #F9F9F9,
+  #F1F1F1,
+  #CCCCCC,
+  #807F7F
+);

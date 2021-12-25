@@ -1,0 +1,32 @@
+<div class="header">
+  <span class="header-logo" [inlineSVG]="getLogo()" cacheSVG="true"></span>
+  <div class="header-options">
+    <sh-alert></sh-alert>
+    <sh-language-selector></sh-language-selector>
+    <!-- <span *ngIf="environment.isRasp" [routerLink]="['/settings']" class="header-icon"  [inlineSVG]="'./assets/media/icons/settings.svg'"></span> -->
+    <span *ngIf="isRasp" [routerLink]="['/settings']" class="fa-fw fa fa-cog header-icon"></span>
+    <!-- <span *ngIf="environment.isRasp" class="header-icon" (click)="open(content)" [inlineSVG]="'./assets/media/icons/devices.svg'"></span> -->
+    <span *ngIf="isRasp" class="fa-fw fa fa-desktop header-icon" (click)="open(content)"></span>
+    <!-- <span class="time">{{ now | date:"h:mm" }}</span> -->
+    <!-- <span *ngIf="environment.isRasp" class="header-icon" (click)="openScrollable(wifiContent)" [inlineSVG]="'./assets/media/icons/wifi.svg'"></span> -->
+    <span *ngIf="isRasp" class="fa-fw fa fa-wifi header-icon" (click)="openScrollable(wifiContent)"></span>
+    <div class="time" *ngIf="isRasp">
+      <span>{{now.getHours()}}</span> <span class="colon">:</span> <span>{{now.getMinutes().toString().length === 1 ? '0'+now.getMinutes() : now.getMinutes()}}</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <sh-devices></sh-devices>
+  </div>
+</ng-template>
+
+
+<ng-template #wifiContent let-modal>
+  <div class="modal-body">
+    <div>{{'HEADER.SELECT_WIFI' | translate}}</div>
+    <div>{{'HEADER.USING_LAN' | translate}}</div>
+    <sh-wifi-selector></sh-wifi-selector>
+  </div>
+</ng-template>

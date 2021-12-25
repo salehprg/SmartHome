@@ -1,0 +1,65 @@
+.details{
+    width: 100%;
+}
+
+.details-container{
+    text-align: center;
+}
+
+#problem{
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#errors-reason{
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    color: var(--text-color);
+}
+
+
+.info-list{
+    margin-top: 3rem;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-item{
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+
+
+.info-list li::before{
+    content: "\2022";
+    padding-right: 1rem;
+    color: var(--primary-color);
+}
+
+.retry-btn-container{
+    text-align: center;
+}
+
+.retry-btn{
+    @include svg-icon-stroke-color(var(--text-color));
+    background-color: var(--ui-red);
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border-radius: 2000px;
+    cursor: pointer;
+}
+
+.restart {
+  background-color: var(--ui-red);
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 0.5rem 4rem;
+  border-radius: 1.5rem;
+}

@@ -1,0 +1,9 @@
+<ng-template #bluetoothPair let-modal>
+  <div class="modal-body">
+    {{ bluetoothName }} wants to connect to bluetooth
+    <div class="accept-reject-box">
+      <button (click)="pair()" class="sh-btn btn-green">Pair</button>
+      <button (click)="cancel()" class="sh-btn btn-red">Cancel</button>
+    </div>
+  </div>
+</ng-template>

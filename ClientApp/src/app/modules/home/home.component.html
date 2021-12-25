@@ -1,0 +1,46 @@
+<div *ngIf="homeService._home$ | async;" class="row home-container">
+  <div class="lookup-options" *ngIf="!!(homeService._selectedRoom$ | async)">
+    <span
+      *ngFor="let look of lookups"
+      [ngClass]="{
+        'lookup-item': true,
+        'lookup-item-active': active === look
+      }"
+      (click)="active = look"
+      >{{ look }}</span
+    >
+  </div>
+  <sh-map class="col-md-6"></sh-map>
+  <sh-lookup class="col-md-6" [active]="active"></sh-lookup>
+</div>
+
+<div *ngIf="homeService._isLoading$ | async" class="error-home">
+  <p>{{'GENERAL.LOADING' | translate}}</p>
+</div>
+
+<div *ngIf="!(homeService._home$ | async) && !(homeService._isLoading$ | async)" class="error-home">
+  <p>{{'HOME.ERROR' | translate}}</p>
+  <p [routerLink]="['/details']" class="learn-more">Learn more</p>
+</div>
+
+<!-- <ng-template #fetchError let-modal>
+  <div class="content">{{'HOME.MODAL.M_ERROR' | translate}}</div>
+  <div class="content">{{'HOME.MODAL.RELOAD_IT' | translate}}</div>
+  <div class="content">{{'HOME.MODAL.CONNECT_WIFI' | translate}}</div>
+
+  <span class="content row">
+    <button class="reload-btn col-2 mx-auto" (click)="reloadPage()">
+      <span class="reload-icon" [inlineSVG]="'./assets/media/icons/try-again.svg'"></span>
+    </button>
+    <span class="col-2 mx-auto wifi-btn" (click)="openWifiModal(wifiContent2)" [inlineSVG]="'./assets/media/icons/wifi.svg'"></span>
+  </span>
+
+</ng-template> -->
+
+<ng-template #wifiContent2 let-modal>
+  <div class="modal-body">
+    <div>{{'HEADER.SELECT_WIFI' | translate}}</div>
+    <div>{{'HEADER.USING_LAN' | translate}}</div>
+    <sh-wifi-selector></sh-wifi-selector>
+  </div>
+</ng-template>

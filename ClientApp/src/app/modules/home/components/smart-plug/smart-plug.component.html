@@ -1,0 +1,36 @@
+<!-- <div class="gcard sp-container">
+  <div class="sp-title-container">
+    <div class="sp-title">
+      <span class="mr-1 fa-fw fa fa-plug"></span
+      >{{ "GENERAL.SMART_PLUG" | translate }}
+    </div>
+    <div class="title-container text-center">{{ smartplug.name }}</div>
+  </div>
+  <div
+    class="show-consumed"
+    [ngClass]="isDangerous === true ? 'danger' : 'normal'"
+  >
+    <div class="consumed-text">{{ "SMART_PLUG.CONSUMED" | translate }}</div>
+    <div style="color: var(--text-color)">
+      <span class="sp-amount">{{ consumed }}</span> Kwh
+    </div>
+  </div>
+</div> -->
+
+<sh-card
+[class]="'smartplug-card'"
+title="{{'GENERAL.SMART_PLUG' | translate}}"
+[icon]="'plug'"
+[isScenarioSetting]="false"
+[id]="smartplug.id">
+  <div class="smartplug-details">
+    <div class="smartplug-name">{{ smartplug.name }}</div>
+
+    <div class="power-report">
+      <span class="power-report-text power-report-title">{{'SMART_PLUG.INSTANTANEOUS' | translate}}</span>
+      <span class="power-report-text">{{ consumed }} kwh</span>
+      <span class="tag tag-bad" *ngIf="isDangerous">{{'SMART_PLUG.SITUATION.BAD' | translate}}</span>
+      <span class="tag tag-good" *ngIf="!isDangerous">{{'SMART_PLUG.SITUATION.GOOD' | translate}}</span>
+    </div>
+  </div>
+</sh-card>

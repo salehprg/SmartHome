@@ -1,0 +1,9 @@
+<div class="card-container" (click)="changeSituation()"
+    [ngClass]="[situation === 1 ? 'step-1' : '' , situation === 3 ? 'activated' : '' , situation === 4 ? 'has-error' : '']">
+    <div class="text" *ngIf="situation === 0">{{scenario.scenarioName}}</div>
+    <div class="text" *ngIf="situation === 1">{{'SCENARIO.SCENARIO_CARD.ACTIVE_QUESTION' | translate}}</div>
+    <div class="text" *ngIf="situation === 2">{{'SCENARIO.SCENARIO_CARD.ACTIVATING' | translate}}</div>
+    <div class="text" *ngIf="situation === 3">{{'SCENARIO.SCENARIO_CARD.ACTIVATED' | translate}} </div>
+    <div class="text" *ngIf="situation === 4">{{'SCENARIO.SCENARIO_CARD.ERROR' | translate}} </div>
+
+</div>

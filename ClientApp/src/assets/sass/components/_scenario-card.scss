@@ -1,0 +1,53 @@
+.card-container {
+  background-color: var(--surface-d);
+  border-radius: 1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 90%;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    // text-align: center;
+
+
+    &.sub-header {
+      font-size: 1rem;
+    }
+  }
+
+  .sub-header {
+    font-size: 1rem;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.step-1 {
+  background-color: var(--primary-color);
+}
+
+.activated {
+  background-color: var(--ui-green);
+}
+
+.has-error{
+  background-color: var(--ui-red);
+}
+
+@include media-breakpoint-down(md) {
+  .card-container {
+    width: 100%;
+  }
+}

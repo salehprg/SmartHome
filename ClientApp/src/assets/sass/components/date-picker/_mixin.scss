@@ -1,0 +1,92 @@
+@mixin datePickerTheme(
+  $themeName,
+  $backgroundColor,
+  $textColor,
+  $theColHoverBackgroundColor,
+  $theColHoverTextColor,
+  $selectedColBackgroundColor,
+  $selectedColTextColor,
+  $disabledColBackgroundColor,
+  $disabledColTextColor,
+  $otherMonthColTextColor,
+  $timePickerBackgroundColor,
+  $timePickerBorderTopColor,
+  $timePickerIconColor,
+  $timePickerHoverIconColor
+)
+{
+  .datepicker-outer-container {
+    &.#{$themeName} {
+      background: $backgroundColor;
+      color: $textColor;
+
+      .datepicker-inner-container {
+
+        .navigation-container {
+          .go-forward, .go-back {
+            svg {
+              path {
+                fill: $textColor;
+              }
+            }
+          }
+        }
+
+        .dp-btn {
+
+          &:hover {
+            background: $theColHoverBackgroundColor!important;
+            color: $theColHoverTextColor!important;
+            svg {
+              path {
+                fill: $theColHoverTextColor!important;
+              }
+            }
+          }
+
+          &.today {
+            background: $backgroundColor;
+            color: $textColor;
+          }
+
+          &.selected {
+            background: $selectedColBackgroundColor;
+            color: $selectedColTextColor;
+          }
+
+          &.disabled {
+            background: $disabledColBackgroundColor!important;
+            color: $disabledColTextColor!important;
+            cursor: not-allowed!important;
+          }
+
+          &.other-month span {
+            color: $otherMonthColTextColor;
+          }
+        }
+
+        .time-container {
+          background: $timePickerBackgroundColor;
+          border-top-color: $timePickerBorderTopColor;
+
+          .time-col {
+            div {
+              svg {
+                polygon {
+                  fill: $timePickerIconColor;
+                }
+              }
+              &:hover {
+                svg {
+                  polygon {
+                    fill: $timePickerHoverIconColor;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

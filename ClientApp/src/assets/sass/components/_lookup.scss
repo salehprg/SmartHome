@@ -1,0 +1,112 @@
+.lookup {
+  height: 100%;
+
+  &.setting-lookup {
+    height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+.lookup-options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-bottom: 15px;
+  text-align: center;
+
+  &.chart-options{
+    width: 50%;
+  }
+}
+
+.lookup-item {
+  padding: 2px 20px;
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
+.lookup-item-active {
+  background-color: var(--primary-color);
+  border-radius: 1000px;
+}
+
+.sp-title {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.smart-plugs-title {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.gadgets-container {
+  width: 100%;
+  max-height: 65vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.error-home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.learn-more {
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--secondary-text-color);
+  border-radius: 1.5rem;
+}
+
+.lookup-text{
+  color: var(--text-color);
+}
+
+.sp-lookup-container{
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.empty-space {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.empty-space span {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+@include media-breakpoint-down(md){
+  .lookup {
+    margin-top: 1rem;
+  }
+
+  .smart-plugs-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+  }
+
+  .gadgets-container {
+    width: 100%;
+    overflow-x: hidden;
+    max-height: none;
+  }
+
+  .lookup-item{
+    font-size: 1rem;
+  }
+
+}

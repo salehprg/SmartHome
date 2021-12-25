@@ -1,0 +1,19 @@
+<sh-header></sh-header>
+<sh-bar (activate)="activate($event)" [active]="activePanel" [options]="options"></sh-bar>
+<main class="slides">
+  <section panel-data="Dashboard" class="section-1 auto-height">
+    <sh-dashboard></sh-dashboard>
+  </section>
+  <section panel-data="Your home" class="section-2">
+    <sh-home></sh-home>
+  </section>
+  <section panel-data="Scenarios" class="section-3">
+    <sh-scenarios></sh-scenarios>
+  </section>
+  <section panel-data="Cameras" class="section-5">
+    <sh-cameras></sh-cameras>
+  </section>
+  <section panel-data="Music" class="section-4">
+    <sh-music></sh-music>
+  </section>
+</main>

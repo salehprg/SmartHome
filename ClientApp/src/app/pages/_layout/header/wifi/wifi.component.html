@@ -1,0 +1,7 @@
+<div class="wifis-container">
+    <sh-wifi-card 
+    *ngFor="let wifi of wifis" 
+    [name]="wifi.apName" 
+    [id]="wifi.apName"
+    [isConnected]="wifi.apName === connectedWifi"></sh-wifi-card>
+</div>

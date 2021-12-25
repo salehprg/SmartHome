@@ -1,0 +1,17 @@
+@import "variables";
+
+@import "base/functions";
+
+@import "base/mixins";
+@import "plugins/mixins";
+@import "~bootstrap/scss/_mixins.scss";
+
+@import "~bootstrap/scss/bootstrap";
+@import "plugins/perfect-scrollbar";
+
+@import "layout/init";
+@import "components/init";
+@import "widgets/init";
+@import "pages/splash-screen";
+@import "pages/home";
+

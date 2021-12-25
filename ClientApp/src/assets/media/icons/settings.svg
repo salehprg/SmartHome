@@ -1,0 +1,6 @@
+<svg class="icon line" width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g>
+  <circle cx="12" cy="12" r="3" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<path d="M20 10h-.59a1 1 0 01-.94-.67v0a1 1 0 01.2-1.14l.41-.41a1 1 0 000-1.42l-1.42-1.43a1 1 0 00-1.42 0l-.41.41a1 1 0 01-1.14.2h0a1 1 0 01-.69-.95V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v.59a1 1 0 01-.67.94h0a1 1 0 01-1.14-.2l-.41-.41a1 1 0 00-1.42 0L4.93 6.34a1 1 0 000 1.42l.41.41a1 1 0 01.2 1.14v0a1 1 0 01-.94.67H4a1 1 0 00-1 1v2a1 1 0 001 1h.59a1 1 0 01.94.67v0a1 1 0 01-.2 1.14l-.41.41a1 1 0 000 1.42l1.41 1.41a1 1 0 001.42 0l.41-.41a1 1 0 011.14-.2h0a1 1 0 01.67.94V20a1 1 0 001 1h2a1 1 0 001-1v-.59a1 1 0 01.67-.94h0a1 1 0 011.14.2l.41.41a1 1 0 001.42 0l1.41-1.41a1 1 0 000-1.42l-.41-.41a1 1 0 01-.2-1.14v0a1 1 0 01.94-.67H20a1 1 0 001-1V11a1 1 0 00-1-1z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</svg>

@@ -1,0 +1,11 @@
+<div class="camera-container">
+    <div class="camera-header">
+        <div class="camera-live"><span [inlineSVG]="'./assets/media/icons/dot.svg'"></span> {{'CAMERA.LIVE' | translate}}</div>
+        <!-- <div>{{ name }}</div> -->
+    </div>
+    <div class="stream-box">
+      <!-- <canvas #stream id="canvas"></canvas> -->
+      <video #video class="video" controls [volume]="false"></video>
+      <!-- <iframe [src]="link" ></ifra me> -->
+    </div>
+</div>

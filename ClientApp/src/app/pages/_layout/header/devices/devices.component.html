@@ -1,0 +1,10 @@
+<p [innerHTML]="'HEADER.DEVICES.MAKE_SURE' | translate:param"> </p>
+<p>{{'HEADER.DEVICES.SCAN_QR' | translate}}</p>
+<div class="qr-back">
+  <sh-loader [class]="'white-loader'" *ngIf="isLoading"></sh-loader>
+  <!-- <img *ngIf="!isLoading" class="qrcode" [src]="imageUrl" alt="qr code"> -->
+  <div *ngIf="!isLoading" class="qrcode" [innerHTML]="image">
+    <!-- {{image}} -->
+  </div>
+</div>
+<!-- <p>{{'HEADER.DEVICES.ENTER' | translate}} <span class="ip">{{ ip }}</span> {{'HEADER.DEVICES.IN_BROWSER' | translate}}</p> -->

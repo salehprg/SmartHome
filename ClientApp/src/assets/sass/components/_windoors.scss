@@ -1,0 +1,25 @@
+.windoors-container {
+    background-color: var(--surface-d);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .windoors-title{
+      color: var(--text-color);
+      font-size: 1.4rem;
+  }
+
+  .windoors-situation {
+    margin-top: 1rem;
+    background-color: var(--surface-0);
+    width: 80%;
+    padding: 0.5rem 0;
+    border-radius: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+  }

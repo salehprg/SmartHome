@@ -1,0 +1,59 @@
+.energy-report-container{
+    padding-right: .5rem;
+    // padding-left: .5rem;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    border: 3px solid var(--ui-green);
+    border-radius: 6px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: .2rem;
+    width: 99%;
+}
+
+.out-of-range{
+    border: 3px solid var(--ui-red);
+    border-radius: 6px;
+    
+}
+
+.er-title{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.out-icon{
+    @include svg-icon-color(var(--ui-red));
+    @include svg-icon-size(2.6rem);
+}
+
+.er-amount{
+    font-weight: bold;
+}
+
+.normal-icon{
+    @include svg-icon-color(var(--ui-green));
+    @include svg-icon-size(2.6rem);
+}
+
+.er-button{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    font-size: 1.4rem;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+
+.er-mega-title{
+    font-size: 1.4rem;
+}
+
+@include media-breakpoint-down(md){
+    .er-title{
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+:root {
+  --surface-a:#1e1e1e;
+  --surface-b:#121212;
+  --surface-c:rgba(255, 255, 255, 0.03);
+  --surface-d:#383838;
+  --surface-e:#1e1e1e;
+  --surface-f:#1e1e1e;
+  --text-color:rgba(255, 255, 255, 0.87);
+  --text-color-secondary:rgba(255, 255, 255, 0.6);
+  --primary-color:#BA68C8;
+  --hover-primary-color:#af4fbf;
+  --light-primary-color:#e8ccec;
+  --primary-color-text:#ffffff;
+  --font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --surface-0: #121212;
+  --surface-50: #181818;
+  --surface-100: #1e1e1e;
+  --surface-200: #242424;
+  --surface-300: #2a2a2a;
+  --surface-400: #303030;
+  --surface-500: #363636;
+  --surface-600: #3b3b3b;
+  --surface-700: #414141;
+  --surface-800: #474747;
+  --surface-900: #4d4d4d;
+  --content-padding:1rem;
+  --inline-spacing:0.5rem;
+}

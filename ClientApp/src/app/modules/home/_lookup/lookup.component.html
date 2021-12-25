@@ -1,0 +1,126 @@
+<div
+  class="lookup"
+  *ngIf="homeService._selectedRoom$ | async as room; else noSelection"
+>
+  <div style="height: 100%;" *ngIf="!isEmpty(room.roomDevices) ; else noModules">
+    <!-- <div class="lookup-options">
+      <span
+        *ngFor="let look of lookups"
+        [ngClass]="{
+          'lookup-item': true,
+          'lookup-item-active': active === look
+        }"
+        (click)="active = look"
+        >{{ look }}</span
+      >
+    </div> -->
+    <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.LAMPS')"
+      [ngTemplateOutlet]="lampsTemplate"
+      [ngTemplateOutletContext]="{ lamps: room.devices.leDs }"
+    ></ng-container>
+
+    <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.GADGETS')"
+      [ngTemplateOutlet]="gadgetTemplate"
+      [ngTemplateOutletContext]="{ modules: room.devices }"
+    ></ng-container>
+
+    <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.DOORS_AND_WINDOORS')"
+      [ngTemplateOutletContext]="{ modules: room.devices }"
+      [ngTemplateOutlet]="windoorsTemplate"
+    ></ng-container>
+
+    <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.SMART_PLUGS')"
+      [ngTemplateOutlet]="smartPlugsTemplate"
+      [ngTemplateOutletContext]="{smartplugs : getSp(room.roomId)}"
+    ></ng-container>
+  </div>
+</div>
+
+<ng-template #lampsTemplate let-lamps="lamps">
+  <div class="gadgets-container mx-auto row">
+    <!-- <sh-lamps
+      class="col-md-12 mx-auto"
+      *ngIf="lamps && lamps.length > 0"
+      [lamps]="lamps"
+    ></sh-lamps> -->
+    <sh-lamp *ngFor="let lamp of lamps" class="col-4 p-1" [lamp]="lamp"></sh-lamp>
+  </div>
+
+  <div class="empty-space" *ngIf="!lamps || lamps.length === 0">
+    <span class="error" [inlineSVG]="'./assets/media/icons/empty.svg'"></span>
+    <span>{{ 'GENERAL.EMPTY_LAMPS' | translate }}</span>
+  </div>
+</ng-template>
+
+<ng-template #gadgetTemplate let-modules="modules">
+  <div class="gadgets-container mx-auto row">
+    <div class="other-gadgets col-md-12 mx-auto">
+      <ng-container *ngFor="let curtain of modules.curtains">
+        <sh-curtain [curtain]="curtain"></sh-curtain>
+      </ng-container>
+      <sh-rgb-lamp [isOn]="rgbIsOn" *ngIf="modules.leDs.length > 2"></sh-rgb-lamp>
+    </div>
+
+    <!-- <sh-rgb-lamp></sh-rgb-lamp> -->
+  </div>
+
+  <div class="empty-space" *ngIf="isEmptyOfDevices(modules)">
+    <span class="error" [inlineSVG]="'./assets/media/icons/empty.svg'"></span>
+    <span>{{ 'GENERAL.EMPTY_DEVICES' | translate }}</span>
+  </div>
+</ng-template>
+
+<ng-template #windoorsTemplate let-modules="modules">
+  <div class="row">
+    <!-- <sh-windoors class="col-lg-6" *ngFor="let windoor of windoors" [windoors]="windoor"></sh-windoors> -->
+    <ng-container *ngFor="let windoor of modules.windoors">
+      <sh-windoors
+        [windoors]="windoor"
+        class="col-lg-4 col-md-6 col-sm-4 col-6"
+      ></sh-windoors>
+    </ng-container>
+  </div>
+
+  <div class="empty-space" *ngIf="modules.windoors.length === 0">
+    <span class="error" [inlineSVG]="'./assets/media/icons/empty.svg'"></span>
+    <span>{{ 'GENERAL.EMPTY_WINDOOR' | translate }}</span>
+  </div>
+</ng-template>
+
+<ng-template #smartPlugsTemplate let-smartplugs = "smartplugs">
+  <div class="sp-title" *ngIf="smartplugs && smartplugs.length !== 0">
+    <p class="smart-plugs-title">
+      {{ "HOME.LOOKUP.TAP_SMART_PLUG" | translate }}
+    </p>
+  </div>
+  <div class="row sp-lookup-container">
+    <sh-smart-plug
+      class="col-11 mx-auto"
+      *ngFor="let sp of smartplugs"
+      (click)="goToDetails(sp.id)"
+      [id]="sp.id"
+      [smartplug]="sp"
+    >
+    </sh-smart-plug>
+  </div>
+  <div class="empty-space" *ngIf="!smartplugs || smartplugs.length === 0">
+    <span class="error" [inlineSVG]="'./assets/media/icons/empty.svg'"></span>
+    <span>{{ 'GENERAL.EMPTY_SP'| translate }}</span>
+  </div>
+</ng-template>
+
+<ng-template #noSelection>
+  <div *ngIf="!(homeService._isLoading$ | async)" class="error-home">
+    <p class="lookup-text">{{ "HOME.LOOKUP.SELECT_ROOM" | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #noModules>
+  <div class="error-home">
+    <p class="lookup-text">{{ "HOME.LOOKUP.NO_MODULE" | translate }}</p>
+  </div>
+</ng-template>

@@ -1,0 +1,47 @@
+.camera-container {
+  background-color: var(--surface-d);
+  border-radius: 1.5rem;
+  padding-bottom: 0.1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.camera-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.camera-name,
+.camera-live {
+  font-size: 1.4rem;
+}
+
+.camera-icon {
+  @include svg-icon-color(var(--primary-color));
+  @include svg-icon-size(1.4rem);
+}
+
+.stream-box {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.video {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.scan {
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--primary-color);
+  color: #fff;
+}

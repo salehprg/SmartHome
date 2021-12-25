@@ -1,0 +1,26 @@
+<div>
+    <div class="row">
+        <p class="ml-4 sh-text-color">{{'SETTINGS.GENERAL_SETTINGS.THEMES' | translate}}:</p>
+    </div>
+    <div class="row">
+        <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <sh-gs-card title="Sky" (click)="setConfig('saga-blue' ,'light' )" [imagePath]="'../../../../../assets/pictures/img-2.jpg'"></sh-gs-card>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
+            <sh-gs-card title="Fruit" (click)="setConfig('arya-blue' ,'dark' )" [imagePath]="'../../../../../assets/pictures/img-1.jpg'"></sh-gs-card>
+        </div> -->
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <sh-gs-card title="{{'SETTINGS.GENERAL_SETTINGS.THEME.LIGHT' | translate}}" (click)="setAndRedirect('saga-blue' ,'light' )" color="#8df7e0" [isDark]="false" ></sh-gs-card>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
+            <sh-gs-card title="{{'SETTINGS.GENERAL_SETTINGS.THEME.DARK' | translate}}" (click)="setAndRedirect('arya-blue' ,'dark' )" color="#383838" [isDark]="true"></sh-gs-card>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
+            <sh-gs-card title="Dark 2" (click)="setAndRedirect('vela-blue' ,'dark' )" color="#1f2d40" [isDark]="true"></sh-gs-card>
+        </div>
+    </div>
+</div>

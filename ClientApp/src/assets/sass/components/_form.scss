@@ -1,0 +1,124 @@
+.setting-form-container {
+    width: 100%;
+    height: 100%;
+    // border: 2px solid red;
+  }
+
+  .form-title {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    // margin: 2rem;
+  }
+
+
+  .edit-form{
+    display: flex;
+    // grid-template-columns: auto auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+  }
+
+  .setting-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+
+  .s-label {
+    font-size: 1rem;
+    color: var(--text-color);
+    padding-left: 1rem;
+  }
+
+  .s-input {
+    border-radius: 5px;
+    // width: 100%;
+    padding: 0.5rem;
+    background-color: var(--surface-d);
+    border: none;
+    outline: none;
+    // margin-left: 10px;
+    color: var(--text-color);
+  }
+
+  .s-input-error{
+    border: 2px solid var(--ui-red);
+  }
+
+  .s-btn {
+    border-radius: 5px;
+    margin-top: 2.5rem;
+    height: 70%;
+    // width: 60%;
+    background-color: var(--ui-green);
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    padding: .5rem 4rem;
+  }
+
+  .keybox {
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .simple-keyboard {
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
+  /*
+      Theme: myTheme1
+    */
+  .simple-keyboard.myTheme1 {
+    background-color: var(--surface-d);
+    border-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .simple-keyboard.myTheme1 .hg-button {
+    font-family: Vazir;
+    height: 50px;
+    border: none;
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+    align-items: center;
+    background: var(--surface-d);
+    color: var(--text-color);
+  }
+
+  .simple-keyboard.myTheme1 .hg-button:active {
+    background: #1c4995;
+    color: var(--text-color);
+  }
+
+  #root .simple-keyboard.myTheme1 + .simple-keyboard-preview {
+    background: #1c4995;
+  }
+
+  .changeLang{
+    // margin-left: 4rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: var(--surface-d);
+    border: none;
+    outline: none;
+    color: var(--text-color);
+  }
+
+  .small-width {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.sh-text-color{
+  color: var(--text-color);
+}

@@ -1,0 +1,57 @@
+
+.mapp {
+  width: 100%;
+}
+
+.stroke-pattern {
+  fill: none;
+  stroke: var(--secondary-text-color);
+  stroke-miterlimit: 10;
+  opacity: 0.1;
+  stroke-width: 1px;
+}
+
+.room-border {
+  stroke-width: 4px;
+  stroke: var(--secondary-text-color);
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.stroked-element {
+  stroke-width: 4px;
+  stroke: var(--secondary-text-color);
+  stroke-miterlimit: 10;
+}
+
+.room-bg {
+  fill: var(--surface-0);
+  stroke: transparent;
+  cursor: pointer;
+  stroke-width: 4px;
+}
+
+.room-text {
+  cursor: pointer;
+  user-select: none;
+  pointer-events: none;
+  fill: var(--text-color);
+  font-size: 1.8rem;
+}
+
+.selected-room {
+  z-index: 40;
+
+  .room-text {
+    fill: var(--primary-color);
+  }
+  .room-border {
+    stroke: var(--primary-color);
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .room-text {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,26 @@
+.pie-title{
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.all-sp-box {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+border: 1px solid var(--secondary-text-color);
+padding: 0.5rem;
+border-radius: 1.5rem;
+margin: 1rem 0;
+}
+
+.chart-b {
+width: 80%;
+padding: 0 2rem;
+}
+
+@include media-breakpoint-down(md) {
+  .all-sp-box {
+    flex-direction: column;
+  }
+}

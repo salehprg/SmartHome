@@ -1,0 +1,173 @@
+<div class="sp-details">
+  <div class="sp-detail-card">
+    <span class="sp-detail-title"
+      >{{ "SMART_PLUG.CONSUMPTION_IN" | translate }} {{ selectedTime }}</span
+    >
+    <span class="sp-detail-text" dir="ltr">{{ smartPlug.totalWatt }} kwh</span>
+  </div>
+  <!-- <div class="divider divider-mega"></div> -->
+  <!-- <div class="sp-detail-card row">
+    <div class="col-8 usage">
+      <div class="row usage-label">{{ "SMART_PLUG.USAGE" | translate }}</div>
+      <div class="row usage-content">
+        {{ "SMART_PLUG.SITUATION.GOOD" | translate }}
+      </div>
+    </div>
+    <div class="col-4">
+      <span class="correct-icon fa-fw fa fa-check-circle"></span>
+    </div>
+  </div> -->
+  <div class="sp-detail-card mx-md-2">
+    <span class="sp-detail-title"
+      >{{ "SMART_PLUG.APPROX_PRICE" | translate }} {{ selectedTime }}</span
+    >
+    <span class="sp-detail-text">{{smartPlug.price | currency:'IRR':'':'':''}} {{ 'GENERAL.PRICE_UNIT' | translate }}</span>
+  </div>
+  <div class="sp-detail-card">
+    <span class="sp-detail-title">{{ "SMART_PLUG.NAME" | translate }}</span>
+    <span class="sp-detail-text">{{ name }}</span>
+  </div>
+</div>
+
+<div style="padding: 0 1rem">
+  <div class="sp-range-card">
+    <div ngbDropdown placement="bottom">
+      <div
+        class="sp-dropdown"
+        ngbDropdownToggle
+        data-toggle="dropdown"
+        data-offset="10px,0px"
+      >
+        {{ chartType }}
+      </div>
+      <div class="drop-box" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <div
+          class="drop-item"
+          (click)="selectType(translate.instant('SMART_PLUG.LOOKUP.VOLTAGE'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.LOOKUP.VOLTAGE" | translate }}
+        </div>
+        <div
+          class="drop-item"
+          (click)="selectType(translate.instant('SMART_PLUG.LOOKUP.ENERGY'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.LOOKUP.ENERGY" | translate }}
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div ngbDropdown placement="bottom">
+      <div
+        class="sp-dropdown"
+        ngbDropdownToggle
+        data-toggle="dropdown"
+        data-offset="10px,0px"
+      >
+        {{ selectedTime }}
+      </div>
+      <div class="drop-box" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <div
+          class="drop-item"
+          (click)="
+            selectTime(translate.instant('SMART_PLUG.TIME.LAST_24_HOURS'))
+          "
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.LAST_24_HOURS" | translate }}
+        </div>
+        <div
+          class="drop-item"
+          (click)="selectTime(translate.instant('SMART_PLUG.TIME.ONE_WEEK'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.ONE_WEEK" | translate }}
+        </div>
+        <div
+          class="drop-item"
+          (click)="selectTime(translate.instant('SMART_PLUG.TIME.ONE_MONTH'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.ONE_MONTH" | translate }}
+        </div>
+        <div
+          class="drop-item"
+          (click)="selectTime(translate.instant('SMART_PLUG.TIME.TWO_MONTHS'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.TWO_MONTHS" | translate }}
+        </div>
+      </div>
+    </div>
+
+    <span class="sp-text">{{ "SMART_PLUG.SELECT_RANGE" | translate }}</span>
+
+    <div *ngIf="from && to" class="sp-range-picker" (click)="open(content)">
+      {{ shamsiFrom }} - {{ shamsiTo }}
+    </div>
+    <div *ngIf="!(from && to)" class="sp-range-picker" (click)="open(content)">
+      {{ "SMART_PLUG.SELECT_RANGE" | translate }}
+    </div>
+  </div>
+
+  <div dir="ltr">
+    <apx-chart
+      #chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      [fill]="chartOptions.fill"
+      [stroke]="chartOptions.stroke"
+      [annotations]="chartOptions.annotations"
+      [dataLabels]="chartOptions.dataLabels"
+      [grid]="chartOptions.grid"
+    >
+    </apx-chart>
+  </div>
+
+  <ng-template #content let-modal>
+    <div class="modal-body">
+      <div class="date-picker-box">
+        <div class="date-box">
+          <span>{{ "SMART_PLUG.DATE.START" | translate }}</span>
+          <sh-datepicker
+            (dateOnSelect)="selectStartDate($event)"
+            [uiTheme]="'default'"
+            [uiIsVisible]="true"
+            [uiHideOnOutsideClick]="false"
+            [uiHideAfterSelectDate]="false"
+            [uiTodayBtnEnable]="false"
+            [timeEnable]="false"
+            [uiYearView]="false"
+            [uiMonthView]="false"
+            [dateMax]="tod"
+          >
+            ></sh-datepicker
+          >
+        </div>
+        <div class="date-box">
+          <span>{{ "SMART_PLUG.DATE.END" | translate }}</span>
+          <sh-datepicker
+            (dateOnSelect)="selectEndDate($event)"
+            [uiTheme]="'default'"
+            [uiIsVisible]="true"
+            [uiHideOnOutsideClick]="false"
+            [uiHideAfterSelectDate]="false"
+            [uiTodayBtnEnable]="false"
+            [timeEnable]="false"
+            [uiYearView]="false"
+            [uiMonthView]="false"
+            [dateMin]="from"
+            [dateMax]="tod"
+          >
+            ></sh-datepicker
+          >
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

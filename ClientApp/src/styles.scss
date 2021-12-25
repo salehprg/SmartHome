@@ -1,0 +1,88 @@
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Vazir';
+  src: url('assets/fonts/Vazir-Regular-UI.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('assets/fonts/Vazir-Bold-UI.ttf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Harlow Solid Italic';
+  src: url('assets/fonts/Harlow\ Solid\ Italic.ttf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto-Regular.ttf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+@import "~angular-notifier/styles.scss";
+@import '~video.js/dist/video-js.css';
+
+// hide bootstrap dropdown arrow globally
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.angular-bootstrap-table {
+  overflow-x: auto;
+}
+.angular-bootstrap-table {
+  th {
+    outline: none;
+
+    &.sortable {
+      .svg-icon-sort {
+        opacity: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .svg-icon-sort {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .table.table-head-custom thead th.sortable-active {
+    color: var(--primary-color) !important;
+  }
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+.progress-modal {
+  height: 3px;
+  width: 100%;
+}
+
+// .p-colorpicker-color {
+//   // display: none;
+// }
+
+// .p-colorpicker-color-selector{
+//   // display: none;
+// }
+
+// .p-colorpicker-panel{
+//   transform: rotate(-90deg);
+// }

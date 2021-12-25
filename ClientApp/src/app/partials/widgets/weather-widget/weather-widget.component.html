@@ -1,0 +1,61 @@
+<div class="weather-card" [style.background]="bg" *ngIf="weather && !hasError">
+  <div class="weather-animation">
+    <ng-lottie [options]="options"></ng-lottie>
+  </div>
+  <div class="forecast">
+    <div class="today-cast">
+      <div class="infos">
+        <span [class]="isNight === true ? 'weather-light-text' : 'weather-text'">{{ weather }}</span>
+        <span [class]="isNight === true ? 'date-light-box' : 'date-box'">{{ now | date:'EEEE':'':'fa-IR' }} {{ now.toLocaleDateString('fa-IR') }}</span>
+      </div>
+      <span [class]="isNight === true ? 'temp-light' : 'temp'">{{ temp }}&#xb0;</span>
+    </div>
+    <div class="following-days-cast">
+      <div class="day-cast" *ngFor="let day of days">
+        <span [class]="isNight === true ? 'forecast-text' : ''">{{day.date}}</span>
+        <span [class]="isNight === true ? 'forecast-text' : ''">{{day.desc}}</span>
+        <span [class]="isNight === true ? 'forecast-text' : ''">{{day.temp}}&#xb0;</span>
+      </div>
+    </div>
+  </div>
+  <!-- <div *ngIf="weather && !hasError" class="row">
+    <ng-lottie [styles]="styles" [options]="options" class="col-lg-12 col-md-6 col-sm-6 col-xs-6"></ng-lottie>
+
+    <div class="col-6 col-lg-12 infos-container">
+      <div class="location">
+        <span class="location-icon" [inlineSVG]="'./assets/media/icons/location.svg'"></span>
+        <span class="weather-text">{{ 'WEATHER.CITY' | translate }}</span>
+      </div>
+
+      <div class="weather-info">
+        <div class="general-info">
+          <span class="weather-text">{{ weather }}</span>
+          <span class="temp weather-text">{{ temp }}&#xb0;</span>
+        </div>
+
+        <div class="extra-info">
+          <span class="date weather-text">{{ now | date:'fullDate':'':locale }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!weather && !hasError" class="text-center weather-text">Loading</div>
+  <div *ngIf="hasError" class="text-center error-text weather-text">
+    <div class="row">Check connection , Then click below button to reload</div>
+    <div class="row">
+      <span [inlineSVG]="'./assets/media/icons/try-again.svg'" (click)="getWeather()"
+        class="reload-weather-icon"></span>
+    </div>
+  </div> -->
+</div>
+
+<div class="weather-card widget-card-error" [style.background]="bg" *ngIf="hasError">
+  <span class="error" [inlineSVG]="'./assets/media/icons/error.svg'"></span>
+  <p>Failed to get the weather forecast</p>
+  <div (click)="reloadPage()" class="reload">{{'GENERAL.RELOAD' | translate}}</div>
+</div>
+
+<div class="weather-card widget-card-error" [style.background]="bg" *ngIf="loading">
+  <sh-loader></sh-loader>
+</div>

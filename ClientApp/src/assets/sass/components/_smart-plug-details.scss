@@ -1,0 +1,136 @@
+.sp-details-container{
+    width: 100%;
+    height: 100%;
+    // padding: 0 0.5rem;
+}
+
+.sp-details-icon{
+    color: var(--text-color);
+    margin-right: 10px;
+}
+
+.sp-details-title{
+    margin-top: 10px;
+    color: var(--text-color);
+    font-size: 1.7rem;
+}
+
+// .sp-detail-card{
+//     background-color: var(--surface-d);
+//   border-radius: 1.5rem;
+//   padding-right: 1rem;
+//   padding-left: 1rem;
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+//   width: 100%;
+//   height: 100%;
+//   margin-top: 15px;
+
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+.correct-icon{
+    color: var(--ui-green);
+    font-size: 61px;
+}
+
+.light-icon{
+    color: var(--ui-red);
+    font-size: 61px;
+}
+
+// .name-label ,
+// .name-content ,
+// .consumption-label ,
+// .consumption-content ,
+// .consumption-amount ,
+// .usage-label {
+//     color: var(--text-color);
+//     font-size: 1.1rem;
+// }
+
+// .usage-content {
+//   color: var(--text-color);
+//     font-size: 1.5rem;
+// }
+
+// .name-content{
+//     font-size: 1.6rem;
+//     padding-bottom: .5rem;
+// }
+
+// .consumption-amount , .usage-content{
+//     font-size: 2rem;
+// }
+
+// .name-container{
+//     text-align: center;
+// }
+
+// .kwh{
+//     margin-top: 13px;
+// }
+
+@include media-breakpoint-down(xs){
+    .sp-details-title{
+        display: none;
+    }
+}
+
+.sp-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.sp-card {
+  width: 30%;
+  background-color: var(--surface-d);
+  border-radius: 1rem;
+  padding: 1.25rem 1rem;
+}
+
+.sp-card-name {
+  text-align: center;
+}
+
+.sp-card-name span {
+  display: block;
+}
+
+.sp-card-title {
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+}
+
+.sp-name {
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.sp-card-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sp-info {
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+@include media-breakpoint-down(sm) {
+  .sp-stats {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sp-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

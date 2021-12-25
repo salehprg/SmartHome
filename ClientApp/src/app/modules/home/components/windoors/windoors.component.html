@@ -1,0 +1,15 @@
+<!-- <div class="windoors-container" [ngClass]="windoors.status === 'true' ? 'isOpened' : ''">
+    <div class="windoors-title">
+        {{windoors.name}}
+    </div>
+    <div class="windoors-situation">
+        {{windoors.status === 'true' ? translate.instant('WINDOOR.OPEN') : translate.instant('WINDOOR.CLOSE')}}
+    </div>
+</div> -->
+
+<div class="windoors-container">
+  <span class="windoors-title">{{windoors.name}}</span>
+  <div class="windoors-situation" [ngClass]="windoors.status === 'true' ? 'isOpened' : ''">
+    {{windoors.status === 'true' ? translate.instant('WINDOOR.OPEN') : translate.instant('WINDOOR.CLOSE')}}
+</div>
+</div>

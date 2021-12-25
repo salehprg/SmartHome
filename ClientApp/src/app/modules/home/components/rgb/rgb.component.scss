@@ -1,0 +1,16 @@
+.preset-colors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.preset-colors{
+    margin-top: 1rem;
+    margin-right: .5rem;
+}
+
+.pc-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

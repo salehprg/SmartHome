@@ -1,0 +1,15 @@
+.preset-color-container{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-icon{
+    font-size: 20px;
+    color: var(--surface-d);
+    // padding-bottom: 1.5rem;
+}

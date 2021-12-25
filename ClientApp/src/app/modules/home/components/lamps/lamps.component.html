@@ -1,0 +1,20 @@
+<sh-card
+title="{{'GENERAL.LAMPS' | translate}}"
+[heightFull]="true"
+[icon]="'lightbulb'"
+[isScenarioSetting]="false">
+  <div class="lamps-container">
+    <div *ngFor="let lamp of lamps" class="lamp-box">
+      <span class="lamp-name">{{ lamp.name }}</span>
+      <div class="lamp-inputs">
+        <sh-switch (onChange)="set(lamp)" [(ngModel)]="lamp.isOn"></sh-switch>
+        <sh-checkbox class="lamp-checkbox" [checked]="scenarioSettings.lampsCheck[lamp.id]" (onChange)="setActive(lamp.id, $event)" *ngIf="isScenarioSetting"></sh-checkbox>
+      </div>
+    </div>
+  </div>
+</sh-card>
+
+<ng-template #notif>
+  <p>{{'GENERAL.NOTIFICATION_TEXT' | translate}}
+  </p>
+</ng-template>

@@ -1,0 +1,20 @@
+<div *ngIf="(alert._messages$ | async).length > 0" (click)="show()">
+  <img
+    class="flag-icon"
+    src="./assets/media/animations/alert.gif"
+    alt="language"
+  />
+</div>
+
+<ng-template  #modal let-modal>
+  <div *ngIf="alert._messages$ | async as messages" class="alert-box">
+    <img
+      class="flag-icon"
+      src="./assets/media/animations/alert.gif"
+      alt="language"
+    />
+    <div *ngFor="let message of messages" class="lang-holder">
+      <span>{{ message.message }}</span>
+    </div>
+  </div>
+</ng-template>

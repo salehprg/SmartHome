@@ -1,0 +1,6 @@
+<div class="slider-box">
+  <span class="curtain-chevron" (click)="translationService.getSelectedLanguage() === 'en' ? goLeft() : goRight()" [class]="translationService.getSelectedLanguage() ==='en' ? 'fa-fw fa fa-angle-double-left' : 'fa-fw fa fa-angle-double-right'" ></span>
+  <input [style.background]="bg" autocomplete="off" (input)="slide()" (change)="onChange.emit()"
+  type="range" class="slider" [(ngModel)]="value" dir="ltr"/>
+  <span class="curtain-chevron" (click)="translationService.getSelectedLanguage() === 'en' ? goRight() : goLeft()" [class]="translationService.getSelectedLanguage() ==='en' ? 'fa-fw fa fa-angle-double-right' : 'fa-fw fa fa-angle-double-left'"></span>
+</div>

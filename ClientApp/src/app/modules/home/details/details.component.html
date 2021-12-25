@@ -1,0 +1,31 @@
+<div class="details">
+  <div class="header">
+    <div></div>
+    <div class="header-options">
+      <span class="back-btn" [routerLink]="''">{{
+        "GENERAL.BACK_TO_HOME" | translate
+      }}</span>
+    </div>
+  </div>
+
+  <div class="details-container">
+    <div id="problem">{{ "DETAILS.IS_PROBLEM" | translate }}</div>
+    <div id="errors-reason">{{ "DETAILS.ERROR_REASON" | translate }}</div>
+  </div>
+
+  <div class="info-list">
+    <ul style="list-style: none;">
+      <li class="info-item">{{ "DETAILS.NETWORK_CONNECT" | translate }}</li>
+      <li class="info-item">{{ "DETAILS.RECONNECT_WIFI" | translate }}</li>
+      <li class="info-item">{{ "DETAILS.RESTART" | translate }}</li>
+    </ul>
+  </div>
+
+  <div class="info-list">
+    <div class="restart">{{'GENERAL.RESTART' | translate}}</div>
+  </div>
+
+  <!-- <div class="retry-btn-container">
+        <span (click)="restart()" class="retry-btn" [inlineSVG]="'./assets/media/icons/try-again.svg'"></span>
+    </div> -->
+</div>

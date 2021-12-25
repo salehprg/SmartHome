@@ -1,0 +1,25 @@
+.wifi-card-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--surface-f);
+    background-color: var(--surface-0);
+    padding: 1rem;
+}
+
+.wifi-connected-icon{
+    color: var(--ui-green);
+    margin-right: 5px;
+}
+
+
+.wifi-icon{
+    color: var(--primary-color);
+}
+
+.connection-btn{
+    cursor: pointer;
+    background-color: var(--surface-f);
+    padding: 1rem;
+    border-radius: 7px;
+}

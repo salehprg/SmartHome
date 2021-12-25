@@ -1,0 +1,146 @@
+.weather-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.widget-card-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.widget-card-error p {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.widget-card-error .reload {
+  width: 80%;
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+}
+
+.white-error p {
+  color: #fff;
+}
+
+.white-error span {
+  @include svg-icon-color(#fff)
+}
+
+.weather-animation {
+  width: 60%;
+}
+
+.forecast {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.today-cast {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.infos span {
+  display: block;
+}
+
+.following-days-cast {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-cast {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.day-cast span {
+  display: block;
+  margin: 0;
+}
+
+.temp {
+  font-size: 3rem;
+}
+
+.temp-light{
+  font-size: 3rem;
+  color: #fff;
+}
+
+.date-box {
+  font-size: 1.2rem;
+}
+
+.date-light-box{
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.weather-text {
+  font-size: 2rem;
+}
+
+.forecast-text{
+  color: #fff;
+}
+
+.weather-light-text{
+  font-size: 2rem;
+  color: #fff;
+}
+
+.reload-weather-icon{
+  @include svg-icon-stroke-color(var(--text-color));
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--primary-color);
+  border-radius: 1000px;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+@include media-breakpoint-down(md) {
+  .weather-card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .today-cast {
+    margin: 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .weather-card {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .today-cast {
+    margin: 2rem 0;
+  }
+}

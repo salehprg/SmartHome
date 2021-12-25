@@ -1,0 +1,42 @@
+.home-container {
+  height: 76vh;
+  width: 100vw;
+  padding: 10px 5px;
+}
+
+.map-item {
+  width: 100%;
+  grid-area: map;
+}
+
+.lup-item {
+  height: 100%;
+  grid-area: lookup;
+}
+
+.reload-btn {
+  background-color: var(--ui-red);
+  border: none;
+  outline: none;
+  border-radius: 1000px;
+}
+.content {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reload-icon {
+  @include svg-icon-stroke-color(var(--text-color));
+}
+
+.wifi-btn{
+  @include svg-icon-stroke-color(var(--primary-color))
+}
+
+@include media-breakpoint-down(md){
+  .home-container {
+    height: 76vh;
+    width: 100vw;
+    padding: 10px 5px;
+  }
+}

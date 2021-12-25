@@ -1,0 +1,6 @@
+<svg class="icon line" width="48" height="48" id="update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>    
+        <path d="M4,12A8,8,0,0,1,18.93,8M14,8h5V3" fill="none" stroke="#000" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+        <path d="M20,12A8,8,0,0,1,5.07,16M10,16H5v5" fill="none" stroke="#000" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+    </g>
+</svg>

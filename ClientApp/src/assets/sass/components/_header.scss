@@ -1,0 +1,32 @@
+.colon{
+    // transition: all ;
+    animation: blink 2s  infinite;
+}
+
+.back-btn {
+    // margin: 1rem;
+    padding: .5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: var(--surface-d);
+}
+
+.no-margin {
+  margin: 0;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
+}

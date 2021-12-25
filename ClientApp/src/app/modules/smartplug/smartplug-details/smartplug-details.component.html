@@ -1,0 +1,76 @@
+<div class="sp-details-container">
+  <div class="header header-back">
+    <div>
+      <p class="sp-details-title">
+        <span class="sp-details-icon fa-fw fa fa-plug fa-lg"></span
+        >{{name}}
+      </p>
+    </div>
+    <div class="header-options">
+      <span class="back-btn no-margin" [routerLink]="''">{{
+        "GENERAL.BACK_TO_HOME" | translate
+      }}</span>
+    </div>
+  </div>
+
+  <!-- <div class="sp-stats">
+    <div class="sp-card sp-card-name">
+      <span class="sp-card-title">{{'GENERAL.NAME' | translate}}</span>
+      <span class="sp-name">{{name}}</span>
+    </div>
+    <div class="sp-card sp-card-info">
+      <div class="sp-card-stats" dir="ltr">
+        <div class="sp-card-title">{{'SMART_PLUG.CONSUMPTION' | translate}}</div>
+        <div class="sp-info">816 kwh</div>
+      </div>
+      <span class="light-icon fa-fw fa fa-bolt"></span>
+    </div>
+    <div class="sp-card sp-card-info">
+      <div class="sp-card-stats">
+        <div class="sp-card-title">{{'SMART_PLUG.USAGE' | translate}}</div>
+        <div class="sp-info">{{'SMART_PLUG.SITUATION.GOOD' | translate}}</div>
+      </div>
+      <span class="correct-icon fa-fw fa fa-check-circle"></span>
+    </div>
+  </div> -->
+
+  <!-- <div></div> -->
+
+  <!-- <div class="row">
+        <div class="sp-detail-card name-container">
+            <div class="name-label">{{'SMART_PLUG.NAME' | translate}}</div>
+            <div class="name-content">Air conditioner</div>
+        </div>
+        <div class="sp-detail-card row">
+            <div class="col-8">
+                <div class="row consumption-label">{{'SMART_PLUG.CONSUMPTION' | translate}}</div>
+                <div class="row consumption-content">
+                    <span class="consumption-amount">210 </span>
+                    <div class="kwh">Kwh</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <span class="light-icon fa-fw fa fa-bolt"></span>
+            </div>
+        </div>
+        <div class="sp-detail-card row">
+            <div class="col-8 usage">
+                <div class="row usage-label">{{'SMART_PLUG.USAGE' | translate}}</div>
+                <div class="row usage-content">{{'SMART_PLUG.SITUATION.GOOD' | translate}}</div>
+            </div>
+            <div class="col-4">
+                <span class="correct-icon fa-fw fa fa-check-circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-11">
+        Hello
+      </div>
+    </div>
+    <div class="mt-4 mx-auto">
+        <sh-smartplug-charts [id]="id"></sh-smartplug-charts>
+    </div> -->
+    <sh-smartplug-charts [id]="id" [name]="name"></sh-smartplug-charts>
+</div>

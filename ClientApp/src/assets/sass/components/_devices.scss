@@ -1,0 +1,19 @@
+.ip {
+  color: var(--primary-color);
+}
+
+.wifi {
+  color: var(--ui-green);
+}
+
+.qr-back {
+  display: inline-block;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(150deg, var(--logo-color-1) 0%, var(--logo-color-2) 100%);
+  border-radius: 15px;
+}
+
+.qrcode svg {
+  
+}

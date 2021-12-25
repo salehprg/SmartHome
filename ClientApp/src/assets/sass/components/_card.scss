@@ -1,0 +1,73 @@
+.gcard {
+  width: 100%;
+  background-color: var(--surface-d);
+  border-radius: 1rem;
+  // padding: 10px 10px;
+  padding: 0.5rem 0.5rem;
+  // padding-top: 1rem;
+}
+
+.gcard-height-full {
+  // height: 100%;
+  overflow-y: hidden;
+}
+
+.sh-card-icon{
+  font-size: 1.4rem;
+}
+
+.gcard-header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-small {
+  font-size: 1.1rem !important;
+  white-space: nowrap;
+}
+
+.head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gcard-icon {
+  margin: 0 2px;
+  @include svg-icon-stroke-color(var(--text-color));
+  @include svg-icon-size(2.6rem);
+}
+
+.gcard-icon-fill {
+  @include svg-icon-color(var(--text-color));
+}
+
+.gcard-title {
+  margin: 0 0.5rem;
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.other-gadgets {
+  .gcard {
+    margin: 10px 0;
+  }
+}
+
+.cards-grid{
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(2 , 1fr);
+  gap: 10px;
+  width: 80%;
+  // height: 100%;
+}
+
+.notif-link{
+  text-decoration: underline;
+  color: var(--text-color);
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+<div class="container scenario-container" *ngIf="!isLoading && !hasError && scenarios && scenarios.length > 0">
+  <div class="row">
+    <sh-scenario-card class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let scenario of scenarios"
+      (changeScenarioSituation)="selectScenario(scenario.scenarioId)" [situation]="scenario.situation" [scenario]="scenario">
+    </sh-scenario-card>
+    <!-- <div *ngFor="let s of scenarios">scenario</div> -->
+  </div>
+
+
+</div>
+
+<div *ngIf="isLoading">{{'GENERAL.LOADING' | translate}}</div>
+
+<div *ngIf="!isLoading && hasError">{{'GENERAL.ERROR' | translate}}</div>
+
+<div *ngIf="!scenarios || scenarios.length === 0">{{'SCENARIO.NO_SCENARIO' | translate}}</div>

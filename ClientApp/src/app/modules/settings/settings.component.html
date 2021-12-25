@@ -1,0 +1,20 @@
+<sh-settings-header></sh-settings-header>
+<sh-bar (activate)="activate($event)" [active]="activePanel" [options]="options"></sh-bar>
+<main class="slides">
+  <section panel-data="General" class="section-0">
+    <sh-general-settings class="full-page"></sh-general-settings>
+  </section>
+  <section panel-data="Home" class="section-1">
+    <sh-settings-home></sh-settings-home>
+  </section>
+  <section panel-data="Scenarios" class="section-2">
+    <sh-scenario-settings class="full-page"></sh-scenario-settings>
+  </section>
+  <section panel-data="Modules" class="section-3">
+    <sh-modules-settings class="full-page"></sh-modules-settings>
+  </section>
+  <section panel-data="Cameras" class="section-4">
+    <!-- <sh-active-sessions class="full-page"></sh-active-sessions> -->
+    <sh-cameras-settings class="full-page"></sh-cameras-settings>
+  </section>
+</main>

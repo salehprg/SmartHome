@@ -1,0 +1,5 @@
+<label class="checkbox-container">
+    {{text}}
+    <input type="checkbox" autocomplete="off" (change)="set()" [(ngModel)]="value" [checked]="checked" [disabled]="disabled">
+    <span class="checkmark"></span>
+  </label>

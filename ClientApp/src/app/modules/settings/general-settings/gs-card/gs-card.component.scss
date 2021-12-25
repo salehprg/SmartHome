@@ -1,0 +1,31 @@
+.theme-card{
+    // background-color: var(--surface-d);
+    // background: url('../../../../../assets/pictures/img-1.jpg');
+    // background: url('../../../../../assets/pictures/img-1.jpg') no-repeat center fixed;
+    // background-size: 100% 100background-position: center;
+    // object-fit: cover;
+
+    // height: 200px;
+    // background-color: var(--surface-d);
+  border-radius: 1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 90%;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark{
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.light{
+  color: #495057;
+}

@@ -1,0 +1,25 @@
+<div class="s-card-container" [ngClass]="[isDelete ? 'delete' : '' , isVertical ? 'vertical-card' : '']">
+
+    <div class="c-container" *ngIf="!isDelete;else delete">
+        <div class="header-container">
+            <span class="main-icon fa-fw" [ngClass]="[icon]"
+                ></span>
+            <div class="ml-4">
+                <span class="heading">{{title}}</span>
+                <span class="subHeader">{{name}}</span>
+            </div>
+        </div>
+        <div>
+            <span *ngIf="editable" (click)="edit()" class="edit-icon mt-2 mr-4 fa-fw fa fa-pen" ></span>
+            <span class="remove-icon fa-fw fa fa-trash-alt mt-2" *ngIf="!notDelete" (click)="setToDelete()" ></span>
+        </div>
+    </div>
+
+    <ng-template #delete>
+        <div (click)="deleteItem()">
+            <p class="delete-text text-center">{{'SETTINGS.SETTINGS_CARD.CLICK_AGAIN' | translate}}</p>
+        </div>
+    </ng-template>
+
+
+</div>

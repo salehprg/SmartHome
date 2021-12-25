@@ -1,0 +1,78 @@
+<!-- <div class="header">
+    <span class="header-logo">{{'GENERAL.SCENARIO' | translate}}</span>
+    <div class="header-options">
+        <span (click)="scenarioSettings.save()" class="save-btn">{{'GENERAL.SAVE' | translate}}</span>
+        <span class="back-btn" [routerLink]="'/settings'">{{'GENERAL.BACK_TO_SETTINGS' | translate}}</span>
+    </div>
+</div> -->
+
+<div class="header header-back">
+  <div>
+    <p class="sp-details-title">
+      {{ 'GENERAL.SCENARIO' | translate }}
+    </p>
+  </div>
+  <div class="header-options">
+    <span (click)="scenarioSettings.save()" class="save-btn">{{'GENERAL.SAVE' | translate}}</span>
+    <span class="back-btn no-margin" [routerLink]="''">{{
+      "GENERAL.BACK_TO_HOME" | translate
+    }}</span>
+  </div>
+</div>
+
+<div class="lookup">
+
+    <div class="lookup-options scenario-options">
+        <span *ngFor="let look of lookups" [ngClass]="{'lookup-item': true, 'lookup-item-active': active === look}"
+            (click)="changeTab(look)">{{ look }}</span>
+    </div>
+    <ng-container *ngIf="active === translate.instant('GENERAL.NAME')" [ngTemplateOutlet]="nameTemplate"></ng-container>
+
+    <ng-container *ngIf="active === translate.instant('GENERAL.STATE')" [ngTemplateOutlet]="stateTemplate">
+    </ng-container>
+
+</div>
+
+<div class="keybox">
+  <select class="changeLang" *ngIf="active === translate.instant('GENERAL.NAME')" [(ngModel)]="lang" name="" id="" (change)="changeLang($event)">
+    <option value="persian">فارسی</option>
+    <option value="english">English</option>
+</select>
+
+<div class="simple-keyboard" id="keyboard"></div>
+</div>
+
+<ng-template #nameTemplate>
+    <div class="">
+        <div style="padding: 1rem 1rem;">
+            <input type="text" autocomplete="off" class="s-input" (change)="onInputChange($event)" [(ngModel)]="nameValue">
+        </div>
+    </div>
+
+</ng-template>
+
+<ng-template #stateTemplate>
+    <div *ngIf="homeService._home$ | async;" class="home-container row">
+        <sh-map class="map-item col-lg-6 col-md-12"></sh-map>
+        <sh-scenario-lookup class="lookup-item col-lg-6 col-md-12"></sh-scenario-lookup>
+    </div>
+
+    <div *ngIf="homeService._isLoading$ | async" class="error-home">
+        <p>{{'GENERAL.LOADING' | translate}}</p>
+    </div>
+
+    <div *ngIf="!(homeService._home$ | async) && !(homeService._isLoading$ | async)" class="error-home">
+        <p>{{'HOME.ERROR'}}</p>
+    </div>
+
+    <ng-template #fetchError let-modal>
+        <div class="content">{{'HOME.MODAL.M_ERROR' | translate}}</div>
+        <div class="content">{{'HOME.MODAL.RELOAD_IT' | translate}}</div>
+
+        <span class="content">
+            <button class="reload-btn" >
+                <span class="reload-icon" [inlineSVG]="'./assets/media/icons/try-again.svg'"></span>
+            </button>
+        </span>
+    </ng-template>
+</ng-template>

@@ -1,0 +1,37 @@
+.w-qa-container {
+    background-color: var(--surface-d);
+    border-radius: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+
+    .w-qa-icon{
+        // @include svg-icon-stroke-color(var(--primary-color));
+        color: var(--primary-color);
+        background-color : var(--primary-color-light);
+        padding: 1rem;
+        border-radius: 1000px;
+    }
+  }
+
+  .origin-title{
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: .6rem;
+    color: var(--text-color);
+  }
+
+  .origin-subtitle{
+    font-size: 1.2rem;
+    margin-top: .6rem;
+    color: var(--text-color);
+  }

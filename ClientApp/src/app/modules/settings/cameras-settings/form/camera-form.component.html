@@ -1,0 +1,51 @@
+<div class="setting-form-container">
+    <div class="header">
+        <p class="form-title">{{'GENERAL.CAMERA' | translate}}</p>
+        <div class="header-options">
+            <span class="back-btn" [routerLink]="'/settings'">
+            {{'GENERAL.BACK_TO_SETTINGS' | translate}}</span>
+        </div>
+    </div>
+
+    <div class="setting-form">
+        <div class="s-input-group">
+            <p class="s-label">{{'SETTINGS.FORM.NAME' | translate }}</p>
+            <input type="text" class="s-input" id="name" (focus)="onInputFocus($event)" (change)="onInputChange($event)" [(ngModel)]="inputs.name" autocomplete="off">
+        </div>
+
+        <div class="s-input-group" *ngIf="ipEditable">
+            <p class="s-label">{{'SETTINGS.FORM.IP' | translate }}</p>
+            <input type="text" class="s-input" id="ip" (focus)="onInputFocus($event)" (change)="onInputChange($event)" [(ngModel)]="inputs.ip" autocomplete="off">
+        </div>
+
+        <input
+        type="button"
+        class="s-btn"
+        (click)="handleEvent()"
+        
+        [value]="ipEditable === true ? translate.instant('SETTINGS.FORM.ADD') : translate.instant('SETTINGS.FORM.EDIT')"
+      />
+
+      
+    </div>
+    <div class="keybox">
+        <select
+          class="changeLang"
+          [(ngModel)]="lang"
+          name="lang"
+          id="lang"
+          (change)="changeLang($event)"
+        >
+          <option class="s-option" value="persian">فارسی</option>
+          <option class="s-option" value="english">English</option>
+        </select>
+        <div class="simple-keyboard" id="camera-keyboard"></div>
+      </div>
+</div>
+
+<ng-template #notif>
+    <p>
+      {{ "GENERAL.NOTIFICATION_TEXT" | translate }}
+    </p>
+  </ng-template>
+  

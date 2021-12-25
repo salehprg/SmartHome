@@ -1,0 +1,15 @@
+<!-- <div 
+class="theme-card" 
+[style.background]="color"
+[ngStyle]="{
+    background: 'url(/img/' + imagePath + ')', 
+    backgroundSize: 'cover' ,
+     backgroundPosition: 'center'}">
+    <div>{{title}}</div>
+</div> -->
+
+<div 
+class="theme-card" 
+[style.background]="color">
+    <div [ngClass]="isDark === true ? 'dark' : 'light'">{{title}}</div>
+</div>

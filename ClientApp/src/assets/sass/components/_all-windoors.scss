@@ -1,0 +1,13 @@
+.windoor-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.all-w-title{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

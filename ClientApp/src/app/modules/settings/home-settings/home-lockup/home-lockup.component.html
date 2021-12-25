@@ -1,0 +1,117 @@
+<div
+  class="lookup setting-lookup"
+  *ngIf="homeService._selectedRoom$ | async as room; else noSelection"
+>
+  <div>
+    <!-- <div class="lookup-options">
+        <span
+        *ngFor="let look of lookups"
+        [ngClass]="{'lookup-item': true, 'lookup-item-active': active === look}"
+        (click)="active = look"
+        >{{ look }}</span>
+      </div> -->
+      <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.LAMPS')"
+      [ngTemplateOutlet]="lampsTemplate"
+      [ngTemplateOutletContext]="{ lamps: room.devices.leDs }"
+    ></ng-container>
+    <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.GADGETS')"
+      [ngTemplateOutlet]="gadgetTemplate"
+      [ngTemplateOutletContext]="{ modules: room.devices }"
+    ></ng-container>
+
+    <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.DOORS_AND_WINDOORS')"
+      [ngTemplateOutlet]="windoorsTemplate"
+      [ngTemplateOutletContext]="{ modules: room.devices }"
+    ></ng-container>
+
+    <ng-container
+      *ngIf="active === translate.instant('HOME.LOOKUP.SMART_PLUGS')"
+      [ngTemplateOutlet]="smartPlugsTemplate"
+      [ngTemplateOutletContext]="{ smartplugs: getSp(room.roomId) }"
+    ></ng-container>
+  </div>
+</div>
+
+<ng-template #lampsTemplate let-lamps="lamps">
+  <!-- <div *ngFor="let lamp of modules.leDs">{{lamp.name}}</div> -->
+  <sh-setting-card
+    [isVertical]="true"
+    *ngFor="let lamp of lamps"
+    [editable]="true"
+    [prop]="lamp"
+    title="{{ 'GENERAL.SMART_LAMP' | translate }}"
+    [icon]="'fa-fw fa fa-lightbulb'"
+  ></sh-setting-card>
+
+  <sh-add-card
+    [isVertical]="true"
+    title="{{ 'SETTINGS.FORM.ADD_NEW_DEVICE' | translate }}"
+  ></sh-add-card>
+</ng-template>
+
+<ng-template #gadgetTemplate let-modules="modules">
+  <!-- <div *ngFor="let curtain of modules.curtains">{{curtain.name}}</div> -->
+  <sh-setting-card
+    class="vertical-card"
+    *ngFor="let curtain of modules.curtains"
+    [editable]="true"
+    [isVertical]="true"
+    [prop]="curtain"
+    title="{{ 'GENERAL.SMART_CURTAIN' | translate }}"
+    [icon]="'fa-fw fa fa-archway'"
+  ></sh-setting-card>
+
+
+  <sh-add-card
+    [isVertical]="true"
+    title="{{ 'SETTINGS.FORM.ADD_NEW_DEVICE' | translate }}"
+  ></sh-add-card>
+</ng-template>
+
+<ng-template #windoorsTemplate let-modules="modules">
+  <sh-setting-card
+    *ngFor="let windoor of modules.windoors"
+    [isVertical]="true"
+    [editable]="true"
+    [prop]="windoor"
+    title="{{ 'GENERAL.WINDOW_AND_DOOR' | translate }}"
+    [icon]="'fa-fw fa fa-window-maximize'"
+  ></sh-setting-card>
+
+  <sh-add-card
+    [isVertical]="true"
+    title="{{ 'SETTINGS.FORM.ADD_NEW_WINDOOR' | translate }}"
+  ></sh-add-card>
+</ng-template>
+
+<ng-template #smartPlugsTemplate let-smartplugs="smartplugs">
+  <sh-setting-card
+    *ngFor="let sp of smartPlugs"
+    class="vertical-card"
+    [editable]="false"
+    [isVertical]="true"
+    title="{{ 'GENERAL.SMART_PLUG' | translate }}"
+    [prop]="sp"
+    [icon]="'fa-fw fa fa-plug'"
+  ></sh-setting-card>
+
+  <!-- <sh-add-card
+    [isVertical]="true"
+    title="{{ 'SETTINGS.HOME_SETTINGS.ADD_TITLE' | translate }}"
+  ></sh-add-card> -->
+</ng-template>
+
+<ng-template #noSelection>
+  <div *ngIf="!(homeService._isLoading$ | async)" class="error-home">
+    <p class="sh-text-color">{{ "HOME.LOOKUP.SELECT_ROOM" | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #noModules>
+  <sh-add-card
+    title="{{ 'SETTINGS.HOME_SETTINGS.ADD_TITLE' | translate }}"
+  ></sh-add-card>
+</ng-template>

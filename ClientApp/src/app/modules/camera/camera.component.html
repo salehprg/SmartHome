@@ -1,0 +1,27 @@
+<div class="cameras-box">
+  <div class="stream-box">
+    <ng-container *ngFor="let camera of cameras">
+      <sh-camera-card [link]="camera.link" [name]="camera.name"  *ngIf="selectedLink === camera.link"></sh-camera-card>
+    </ng-container>
+  </div>
+  <div class="links-box">
+    <span style="width: 100%; padding-bottom: 0.25rem; text-align: center;font-size: 1.3rem;">{{ 'CAMERA.SELECT_CAMERA' | translate }}</span>
+    <span (click)="selectedLink = camera.link" [ngClass]="{'link': true, 'selected-link': selectedLink === camera.link}" *ngFor="let camera of cameras">{{ camera.name }}</span>
+  </div>
+</div>
+
+<ng-template #noCamera>
+  <div class="cameras-container cameras-centerize">
+    <div class="" *ngIf="isLoading">
+      <span>{{ "GENERAL.LOADING" | translate }}</span>
+    </div>
+
+    <div *ngIf="!isLoading && hasError">
+      <span>{{ "GENERAL.ERROR" | translate }}</span>
+    </div>
+
+    <div *ngIf="!isLoading && !hasError && (!cameras || cameras.length === 0)">
+      <span>{{ "CAMERAS.NO_CAMERAS" | translate }}</span>
+    </div>
+  </div>
+</ng-template>

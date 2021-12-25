@@ -1,0 +1,102 @@
+<div class="setting-form-container">
+  <div class="header">
+    <p class="form-title">{{ title }}</p>
+    <div class="header-options">
+      <span class="back-btn" [routerLink]="'/settings'">{{
+        "GENERAL.BACK_TO_SETTINGS" | translate
+      }}</span>
+    </div>
+  </div>
+
+  <div [ngClass]="{'small-width': !config.hasName}">
+    <div class="setting-form">
+      <div class="s-input-group" *ngIf="config.hasName">
+        <p class="s-label">{{ "SETTINGS.FORM.NAME" | translate }}</p>
+        <input
+          type="text"
+          class="s-input"
+          id="name"
+          (focus)="onInputFocus($event)"
+          (change)="onInputChange($event)"
+          [(ngModel)]="inputs.name"
+          autocomplete="off"
+        />
+      </div>
+      <div class="s-input-group" *ngIf="config.hasSerial">
+        <p class="s-label">{{ "SETTINGS.FORM.SERIAL_NUMBER" | translate }}</p>
+        <input
+          type="text"
+          class="s-input"
+          id="serial"
+          (focus)="onInputFocus($event)"
+          (change)="onInputChange($event)"
+          [(ngModel)]="inputs.serial"
+          autocomplete="off"
+        />
+      </div>
+      <div class="s-input-group" *ngIf="config.hasModule">
+        <p class="s-label">{{'SETTINGS.FORM.RELY' | translate}}</p>
+        <select name="" [(ngModel)]="module" class="s-input" id="">
+          <option class="s-option" *ngFor="let rely of relys" [value]="rely.name" [selected]="rely.name === module" >
+            {{ rely.name }}
+          </option>
+        </select>
+      </div>
+      <div class="s-input-group" *ngIf="config.hasPin">
+        <p class="s-label">{{'SETTINGS.FORM.PIN' | translate}}</p>
+
+        <input
+          type="text"
+          class="s-input"
+          [(ngModel)]="inputs.pin"
+          id="pin"
+          (focus)="onInputFocus($event)"
+          (change)="onInputChange($event)"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- <div class="s-input-group" *ngIf="config.hasType">
+        <p class="s-label">Type</p>
+
+        <select name="" class="s-input" [(ngModel)]="deviceType" id="">
+          <option class="s-option" value="Lamp" selected>Lamp</option>
+          <option class="s-option" value="Curtain">Curtain</option>
+        </select>
+      </div> -->
+
+      <input
+        type="button"
+        class="s-btn"
+        (click)="handleEvent()"
+        autocomplete="off"
+        [value]="
+          btnValue
+        "
+      />
+    </div>
+
+    <div class="keybox">
+      <select
+        class="changeLang"
+        *ngIf="config.hasName"
+        [(ngModel)]="lang"
+        name="lang"
+        id="lang"
+        (change)="changeLang($event)"
+      >
+        <option class="s-option" value="persian">فارسی</option>
+        <option class="s-option" value="english">English</option>
+      </select>
+      <div class="simple-keyboard" id="s"></div>
+    </div>
+  </div>
+</div>
+
+<ng-template #notif>
+  <p>
+    {{ "GENERAL.NOTIFICATION_TEXT" | translate }}
+
+  </p>
+</ng-template>
+

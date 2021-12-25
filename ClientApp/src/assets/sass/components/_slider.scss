@@ -1,0 +1,145 @@
+input[type=range] {
+  -webkit-appearance: none;
+  width: 80%;
+  border-radius: 1000px;
+  background-color: var(--surface-0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 1000px;
+  background: var(--text-color);
+  cursor: pointer;
+  margin-top: -0.3rem;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 80%;
+  height: 1.2rem;
+  cursor: pointer;
+  border-radius: 1000px;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 1000px;
+  background: var(--text-color);
+  cursor: pointer;
+  margin-top: -0.3rem;
+}
+
+input[type=range]::-moz-range-track {
+  width: 80%;
+  height: 1.2rem;
+  cursor: pointer;
+  border-radius: 1000px;
+}
+
+input[type=range]::-ms-thumb {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 1000px;
+  background: var(--text-color);
+  cursor: pointer;
+  // margin-top: -0.3rem;
+}
+
+input[type=range]::-ms-track {
+  width: 80%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.slider-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.curtain-chevron {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.input-container{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.15rem;
+}
+
+@include media-breakpoint-down(xs) {
+  input[type=range] {
+  -webkit-appearance: none;
+  width: 16rem;
+  border-radius: 1000px;
+
+}
+
+input[type=range]::-ms-track {
+  width: 70%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 1000px;
+  background: var(--text-color);
+  cursor: pointer;
+  margin-top: -0.3rem;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 1000px;
+  background: var(--text-color);
+  cursor: pointer;
+  margin-top: -0.3rem;
+
+}
+
+input[type=range]::-ms-thumb {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 1000px;
+  background: var(--text-color);
+  cursor: pointer;
+  // margin-top: -0.3rem;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 70%;
+  height: 1.2rem;
+  cursor: pointer;
+  border-radius: 1000px;
+
+}
+
+input[type=range]::-moz-range-track {
+  width: 70%;
+  height: 1.2rem;
+  cursor: pointer;
+  border-radius: 1000px;
+}
+
+input[type=range]::-ms-track {
+  width: 70%;
+  height: 1.2rem;
+  cursor: pointer;
+  border-radius: 1000px;
+}
+}

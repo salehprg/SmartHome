@@ -1,0 +1,37 @@
+<sh-card
+  (touchstart)="doNothing()"
+  title="{{ 'GENERAL.RGB_LAMP' | translate }}"
+  [icon]="'lightbulb'"
+  [isScenarioSetting]="isScenarioSetting"
+  [iconFill]="true"
+>
+  <div style="padding: 0 1.5rem;">
+    <color-hue-picker
+      [color]="color"
+      width="100%"
+      (onChangeComplete)="changeColor($event)"
+    ></color-hue-picker>
+  </div>
+  <div class="preset-colors">
+    <div class="pc-container">
+      <sh-rgb-preset-color
+        *ngFor="let pc of presetColors"
+        [color]="pc"
+      ></sh-rgb-preset-color>
+      <sh-rgb-preset-color
+        *ngIf="addable"
+        [forAdd]="true"
+      ></sh-rgb-preset-color>
+    </div>
+    <div>
+      <sh-switch [isRgb]="true" [(ngModel)]="isOn"></sh-switch>
+    </div>
+  </div>
+</sh-card>
+
+<ng-template #notif>
+  <p>
+    {{ "GENERAL.NOTIFICATION_TEXT" | translate
+    }}
+  </p>
+</ng-template>

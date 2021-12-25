@@ -1,0 +1,15 @@
+<div class="cards-grid" *ngIf="!isLoading && !hasError">
+    <!-- <h1 *ngFor="let scenario of scenarios">Hwl</h1> -->
+    <sh-setting-card
+    *ngFor="let camera of cameras"
+    title="{{'GENERAL.CAMERA' | translate}}"
+    [editable]="true"
+    [prop]="camera"
+    [notDelete]="false"
+    [icon]="'fa-fw fa fa-camera'"
+    (removeCamera)="remove($event)"></sh-setting-card>
+
+    <sh-add-card [addCamera]="true" title="{{'SETTINGS.SETTINGS_CARD.ADD.NEW_CAMERA' | translate}}"></sh-add-card>
+</div>
+
+<div *ngIf="isLoading">{{'GENERAL.LOADING' | translate}}</div>

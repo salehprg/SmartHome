@@ -1,0 +1,67 @@
+//
+// SVG Icon
+//
+
+
+@mixin svg-icon-color($color, $important: false) {
+  svg {
+      g {
+          [fill] {
+              transition: fill 0.3s ease;
+              fill: $color;
+          }
+      }
+
+      &:hover {
+          g {
+              [fill] {
+                  transition: fill 0.3s ease;
+              }
+          }
+      }
+  }
+}
+
+@mixin svg-icon-stroke-color($color, $important: false) {
+  svg {
+      g {
+          [stroke] {
+              transition: fill 0.3s ease;
+              stroke: $color;
+          }
+      }
+
+      &:hover {
+          g {
+              [stroke] {
+                  transition: fill 0.3s ease;
+              }
+          }
+      }
+  }
+}
+
+@mixin svg-icon-transition() {
+  svg {
+      g {
+          [fill] {
+              transition: fill 0.3s ease;
+          }
+      }
+  }
+}
+
+@mixin svg-icon-size($size, $important: false) {
+  svg {
+      height: $size;
+      width: $size;
+  }
+}
+
+@mixin svg-logo-color($color, $important: false){
+  svg{
+      path{
+          fill: $color valueif($important, !important, null);
+      }
+  }
+}

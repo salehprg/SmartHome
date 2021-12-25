@@ -1,0 +1,17 @@
+.save-btn{
+    margin: 1rem;
+    padding: .5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: var(--ui-green);
+}
+
+.scenario-options {
+  justify-content: flex-start;
+  padding: 0 1rem;
+  margin-top: 1rem;
+}

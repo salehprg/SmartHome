@@ -1,0 +1,36 @@
+<div class="energy" [style.background]="getBG()" *ngIf="!isLoading && !hasError">
+  <div class="er-mega-title">{{'DASHBOARD.HOME_ENERGY' | translate}}</div>
+  <div class="energy-info">
+    <div class="price-box">
+      <span class="price-title">{{'SMART_PLUG.PRICE' | translate}}</span>
+      <span class="price">{{price | currency:'IRR':'':'':''}} {{ 'GENERAL.PRICE_UNIT' | translate }}</span>
+    </div>
+    <div class="reports-box">
+      <div class="report-box">
+        <div>
+          <span class="report-title">{{'SMART_PLUG.CONSUMPTION' | translate}}</span>
+          <span class="report-text" dir="ltr">{{total}} kwh</span>
+        </div>
+        <span class="report-icon fa-fw fa fa-bolt" ></span>
+      </div>
+      <div class="report-box">
+        <div>
+          <span class="report-title">{{'SMART_PLUG.MOST_USAGE' | translate}}</span>
+          <span class="report-text">{{mostUsage}}</span>
+        </div>
+        <span class="report-icon fa-fw fa fa-angle-double-up" ></span>
+      </div>
+      <div class="generate" [routerLink]="'/smartplug/smart-plugs'">{{'SMART_PLUG.GENERATE_REPORT' | translate }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="energy widget-card-error white-error" style="background-image: url(./assets/media/bg/bg1.jpg);" *ngIf="hasError">
+  <span class="error" [inlineSVG]="'./assets/media/icons/error.svg'"></span>
+  <p>{{'DASHBOARD.ENERGY_ERROR' | translate}}</p>
+  <div class="reload">{{'GENERAL.ERROR' | translate}}</div>
+</div>
+
+<div class="energy widget-card-error" style="background-image: url(./assets/media/bg/bg1.jpg);" *ngIf="isLoading">
+  <sh-loader class="white-loader"></sh-loader>
+</div>

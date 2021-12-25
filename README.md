@@ -1,1 +1,1 @@
-# SmartHome
+smart home readme

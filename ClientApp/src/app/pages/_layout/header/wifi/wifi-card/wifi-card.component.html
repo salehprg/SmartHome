@@ -1,0 +1,7 @@
+<div class="wifi-card-container">
+    <div> <span class="wifi-icon fa-fw fa fa-wifi" ></span>{{name}}</div>
+    <div>
+        <span *ngIf="isConnected" class="wifi-connected-icon fa-fw fa fa-check-circle"></span>
+        <span *ngIf="!isConnected" (click)="goToPassword()" class="connection-btn">Connect</span>
+    </div>
+</div>

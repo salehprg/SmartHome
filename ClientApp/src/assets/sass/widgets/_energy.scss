@@ -1,0 +1,81 @@
+.energy {
+  background-size: cover;
+  border-radius: 1rem;
+  padding: 1.4rem;
+  width: 100%;
+  height: 100%;
+}
+
+.energy-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-box span {
+  color: #fff;
+}
+
+.price-title {
+  font-size: 1.3rem;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.reports-box {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color-light);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+}
+
+.report-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.report-title {
+  display: block;
+  font-weight: bold;
+  color: var(--primary-color-text);
+}
+
+.report-text {
+  display: block;
+  color: var(--primary-color-text);
+}
+
+.generate {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem 0;
+  background-color: var(--primary-color);
+  text-align: center;
+  cursor: pointer;
+}
+
+.report-icon {
+
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+@include media-breakpoint-down(md) {
+  .energy {
+    height: auto;
+  }
+}

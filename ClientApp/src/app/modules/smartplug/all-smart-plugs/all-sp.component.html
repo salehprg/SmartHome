@@ -1,0 +1,86 @@
+<div class="header header-back">
+  <div>
+    <p class="sp-details-title">
+      <span class="fa-fw fa fa-door-closed fa-lg"></span
+      >{{ "GENERAL.SMART_PLUGS_REPORT" | translate }}
+    </p>
+  </div>
+  <div class="header-options">
+    <span class="back-btn no-margin" [routerLink]="''">{{
+      "GENERAL.BACK_TO_HOME" | translate
+    }}</span>
+  </div>
+</div>
+
+<div class="container">
+  <span style="font-size: 1.4rem;" class="sh-text-color">{{'SMART_PLUG.USAGE_PERCENTAGE' | translate}}</span>
+  <div class="all-sp-box">
+    <div ngbDropdown placement="bottom">
+      <div
+        class="sp-dropdown all-sp-dropdown"
+        ngbDropdownToggle
+        data-toggle="dropdown"
+        data-offset="10px,0px"
+      >
+        {{ time }}
+      </div>
+      <div class="drop-box" ngbDropdownMenu aria-labelledby="dropdownBasic2">
+        <div
+          class="drop-item"
+          (click)="
+            selectTime(translate.instant('SMART_PLUG.TIME.LAST_24_HOURS'))
+          "
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.LAST_24_HOURS" | translate }}
+        </div>
+        <div
+          class="drop-item"
+          (click)="selectTime(translate.instant('SMART_PLUG.TIME.ONE_WEEK'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.ONE_WEEK" | translate }}
+        </div>
+        <div
+          class="drop-item"
+          (click)="selectTime(translate.instant('SMART_PLUG.TIME.ONE_MONTH'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.ONE_MONTH" | translate }}
+        </div>
+        <div
+          class="drop-item"
+          (click)="selectTime(translate.instant('SMART_PLUG.TIME.TWO_MONTHS'))"
+          ngbDropdownItem
+        >
+          {{ "SMART_PLUG.TIME.TWO_MONTHS" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="chart-b">
+      <apx-chart
+      #dailyChart
+      [series]="dailyChartOptions.options.series"
+      [chart]="dailyChartOptions.chart"
+      [labels]="dailyChartOptions.options.labels"
+      [dataLabels]="dailyChartOptions.options.dataLabels"
+      [legend]="dailyChartOptions.legend"
+      [plotOptions]="dailyChartOptions.plotOptions"
+    ></apx-chart>
+    </div>
+  </div>
+
+  <div>
+    <span style="font-size: 1.4rem;" class="sh-text-color">{{'SMART_PLUG.ALL_SMART_PLUGS' | translate}}</span>
+    <div class="row" style="margin-top: 1rem;">
+      <sh-smart-plug
+        class="col-lg-6 col-md-6 col-12 mx-auto"
+        *ngFor="let sp of smartPlugs"
+        (click)="goToDetails(sp.baseDevice.id)"
+        [id]="sp.baseDevice.id"
+        [smartplug]="sp.baseDevice"
+      >
+      </sh-smart-plug>
+    </div>
+  </div>
+</div>

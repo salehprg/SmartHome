@@ -1,0 +1,39 @@
+<div>
+  <div class="header header-back">
+    <div>
+      <p class="sp-details-title">
+        <span class="fa-fw fa fa-door-closed fa-lg"></span
+        >{{ "DASHBOARD.ALL_WINDOORS.REPORT" | translate }}
+      </p>
+    </div>
+    <div class="header-options">
+      <span class="back-btn no-margin" [routerLink]="''">{{
+        "GENERAL.BACK_TO_HOME" | translate
+      }}</span>
+    </div>
+  </div>
+
+  <div *ngIf="!isEmpty" class="all-w-title">
+    {{ "DASHBOARD.ALL_WINDOORS.OPENED" | translate }}
+  </div>
+
+  <div class="windoor-wrapper">
+    <sh-windoors
+      *ngFor="let windoor of openedWindoors"
+      class="col-lg-3 col-sm-11 col-md-11 col-xs-11"
+      [windoors]="windoor"
+    ></sh-windoors>
+  </div>
+
+  <div *ngIf="!isEmpty" class="all-w-title">
+    {{ "DASHBOARD.ALL_WINDOORS.CLOSED" | translate }}
+  </div>
+
+  <div class="windoor-wrapper">
+    <sh-windoors
+      *ngFor="let windoor of closedWindoors"
+      class="col-lg-3 col-sm-11 col-md-11 col-xs-11"
+      [windoors]="windoor"
+    ></sh-windoors>
+  </div>
+</div>

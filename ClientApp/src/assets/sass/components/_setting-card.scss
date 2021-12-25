@@ -1,0 +1,79 @@
+.s-card-container {
+  background-color: var(--surface-d);
+  border-radius: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  transition: all 0.5s;
+
+
+
+  .header-container {
+    // padding-left: 1.5rem;
+    // padding-bottom: .5rem
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+  }
+
+  .c-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.vertical-card{
+  margin-top: 15px;
+}
+
+.edit-icon {
+  color: var(--text-color);
+  margin-left: 0.75rem;
+  cursor: pointer;
+}
+
+.remove-icon {
+  color: var(--ui-red);
+  cursor: pointer;
+}
+
+.heading {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  display: block;
+}
+
+.subHeader {
+  color: var(--text-color);
+  font-size: 1rem;
+  display: block;
+}
+
+.main-icon {
+  color: var(--primary-color);
+  font-size: 48px;
+  margin-left: 10px;
+}
+
+.add-card-container {
+  background-color: transparent;
+  border: 2px dashed var(--primary-color);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  width: 95%;
+  margin-top: 15px;
+  transition: all 0.5s;
+  margin-left: -1rem;
+  cursor: pointer;
+
+  .addHeader {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.plus-icon {
+  @include svg-icon-color(var(--primary-color));
+}

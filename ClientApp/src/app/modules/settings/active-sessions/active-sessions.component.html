@@ -1,0 +1,9 @@
+<div class="cards-grid">
+    <sh-setting-card
+        *ngFor="let session of sessions"
+        [editable]="true"
+        [prop]="session"
+        [title]="session.os"
+        [icon]="'fa-fw fa fa-laptop'"
+    ></sh-setting-card>
+</div>

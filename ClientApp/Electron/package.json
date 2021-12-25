@@ -1,0 +1,16 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "scripts": {
+    "start": "electron . --trace-warnings"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.6",
+    "electron-builder": "^22.11.7",
+    "electron-packager": "^15.2.0"
+  }
+}

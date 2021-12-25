@@ -1,0 +1,5 @@
+<svg class="icon line" width="48" height="48" id="window" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path id="primary" d="M19,21H5V4A1,1,0,0,1,6,3H18a1,1,0,0,1,1,1ZM3,21H21M12,3V21m7-9H5" fill="none" stroke="#000" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+    </g>
+</svg>

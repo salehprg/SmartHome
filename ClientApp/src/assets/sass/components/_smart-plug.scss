@@ -1,0 +1,103 @@
+// .sp-container {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-top: 1rem;
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   cursor: pointer;
+
+//   .title-container {
+//     margin-top: 4rem;
+//     background-color: var(--surface-f);
+//     color: var(--text-color);
+//     font-size: 1.3rem;
+//     padding: 0.5rem;
+//     padding-left: 2rem;
+//     padding-right: 2rem;
+//     border-radius: 1rem;
+//   }
+
+//   .show-consumed {
+//     background-color: transparent;
+//     border-radius: 7px;
+//     padding: 1rem;
+//     font-size: 1.5rem;
+
+//     &.normal {
+//       border: 2px solid var(--ui-green);
+//     }
+//     &.danger {
+//       border: 2px solid var(--ui-red);
+//     }
+//   }
+// }
+
+// .sp-icon {
+//   @include svg-icon-stroke-color(var(--text-color));
+// }
+
+// .sp-amount {
+//   font-weight: bold;
+//   color: var(--text-color);
+// }
+
+// .consumed-text , .sp-title{
+//   color: var(--text-color);
+// }
+
+// @include media-breakpoint-down(md) {
+//   .sp-container {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 1rem;
+//     padding-left: 1rem;
+//     padding-right: 1rem;
+//     cursor: pointer;
+//   }
+
+//   .title-container{
+//       margin-bottom: .5rem;
+//   }
+// }
+
+.smartplug-card {
+  margin-bottom: 1rem;
+}
+
+.smartplug-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.smartplug-name {
+  background-color: var(--surface-0);
+  padding: 0.3rem 3rem;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+}
+
+.power-report {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  margin-top: -2rem;
+}
+
+.power-report-text {
+  margin: 0.2rem 0;
+  color: var(--text-color);
+}
+
+.power-report-title {
+  color: var(--secondary-text-color);
+}

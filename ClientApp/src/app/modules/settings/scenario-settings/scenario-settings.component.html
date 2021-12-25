@@ -1,0 +1,11 @@
+<div class="cards-grid" *ngIf="!isLoading && !hasError">
+    <!-- <h1 *ngFor="let scenario of scenarios">Hwl</h1> -->
+    <sh-setting-card *ngFor="let scenario of scenarios" title="{{'SETTINGS.SCENARIO_SETTINGS.TITLE' | translate}}" [editable]="true" [prop]="scenario"
+        [icon]="'fa-fw fa fa-columns'"></sh-setting-card>
+
+    <sh-add-card [isScenario]="true" title="{{'SETTINGS.SCENARIO_SETTINGS.ADD_TITLE' | translate}}"></sh-add-card>
+</div>
+
+<div *ngIf="isLoading">{{'GENERAL.LOADING' | translate}}</div>
+
+<!-- <div *ngIf="hasError">Error</div> -->

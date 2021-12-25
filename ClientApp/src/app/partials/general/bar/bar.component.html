@@ -1,0 +1,5 @@
+<div class="bar">
+  <ng-container *ngFor="let option of options">
+    <span (click)="set(option.value)" [ngClass]="{'panel-title': true, 'active-option': option.value === active}">{{ option.name | translate }}</span>
+  </ng-container>
+</div>
